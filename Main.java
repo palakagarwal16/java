@@ -1,21 +1,33 @@
-import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println( "enter your number ");
-        int num1 = sc.nextInt();
-        if(num1>0){
-            System.out.println("Number is positive ");
-        }
-        else if(num1<0){
-            System.out.println("Number is negative ");
-        }
-        else{
-            System.out.println( "number is 0 ");
-        }
+        List <Integer>list = new ArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        System.out.println(list);
 
-    }
-}
+        List <Integer>newlist = new ArrayList();
+        newlist.add(20);
+        newlist.add(30);
+        System.out.println(newlist);
+        list.addAll(newlist);
+        System.out.println(list);
+        list.remove(1);
+        list.get(2);
+        System.out.println(list);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println( "element is " + list.get(i));
+
+            for(Integer element:list){
+                System.out.println("foreach elemnt is " + element);
+            }
+
+            Iterator<Integer> it = list.iterator();
+            while(it.hasNext()){
+                System.out.println("iterator" + it.next());
+            }
+        }
+    } }
